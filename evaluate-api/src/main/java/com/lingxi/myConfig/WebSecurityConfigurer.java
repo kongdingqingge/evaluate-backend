@@ -23,6 +23,9 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -100,6 +103,27 @@ public class WebSecurityConfigurer extends GlobalMethodSecurityConfiguration {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
+
+    /**
+     * 4.配置跨源访问(CORS)
+     *
+     * @return
+     */
+
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        CorsConfiguration config = new CorsConfiguration();
+        config.setAllowedOrigins(Arrays.asList("http://localhost:8080", "http://81.69.43.25:81", "https://evaluate-app.knowskf.com/api", "https://evaluate-pc.knowskf.com/api", "https://evaluate-ma.knowskf.com/api"));
+        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        config.setAllowedHeaders(Collections.singletonList("*"));
+        config.setAllowCredentials(true);
+        source.registerCorsConfiguration("/**", config);
+
+
+        return source;
+    }
+
     /**
      * 4. 注入使用自己定义DaoAuthenticationProviderCustom来代替框架的DaoAuthenticationProvider
      *
@@ -116,12 +140,12 @@ public class WebSecurityConfigurer extends GlobalMethodSecurityConfiguration {
      *
      * @return
      */
-    @Bean
-    CorsConfigurationSource corsConfigurationSource() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
-        return source;
-    }
+//    @Bean
+//    CorsConfigurationSource corsConfigurationSource() {
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+//        return source;
+//    }
 
 
     /**
