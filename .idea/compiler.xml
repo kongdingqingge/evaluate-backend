@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="evaluate-generator" />
+        <module name="evaluate-api" />
+        <module name="elaluate-content" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo" target="11" />
+      <module name="evaluate-backend" target="11" />
+      <module name="evaluate-common" target="11" />
+      <module name="evaluate-content" target="11" />
+      <module name="evaluate-parent" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demo" options="-parameters" />
+      <module name="elaluate-content" options="-parameters" />
+      <module name="evaluate-api" options="-parameters" />
+      <module name="evaluate-backend" options="" />
+      <module name="evaluate-common" options="-parameters" />
+      <module name="evaluate-content" options="-parameters" />
+      <module name="evaluate-generator" options="-parameters" />
+      <module name="evaluate-parent" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingxi.mapper.GUmpiresMapper">
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lingxi.model.po.GUmpires">
+        <id column="id" property="id"/>
+        <result column="playground_id" property="playgroundId"/>
+        <result column="unit_id" property="unitId"/>
+        <result column="project_id" property="projectId"/>
+        <result column="account" property="account"/>
+        <result column="name" property="name"/>
+        <result column="avatar" property="avatar"/>
+        <result column="type" property="type"/>
+        <result column="location" property="location"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, unit_id, project_id, account, name, avatar, type, location
+    </sql>
+
+    <insert id="addUmpires">
+        INSERT INTO g_umpires(id, playground_id, unit_id, project_id, account, name, avatar, type, location)
+        VALUES (#{id}, #{playground_id}, #{unitId}, #{projectId}, #{account}, #{name}, #{avatar}, #{type}, #{location})
+    </insert>
+
+    <!--删除裁判以及裁判打分表的记录-->
+    <delete id="deleteUmpires" parameterType="java.lang.Integer">
+        DELETE umpires,g_score_umpire
+        FROM g_umpires AS umpires
+                 left join g_score_umpire ON g_score_umpire.umpire_id = umpires.id
+        WHERE umpires.id = #{id}
+    </delete>
+
+    <select id="getUmpiresByAccount" resultType="com.lingxi.model.po.GUmpires">
+        select *
+        from g_umpires
+        where account = #{account}
+    </select>
+
+    <!-- 获取所有裁判信息以及其隶属的单元和场地信息 -->
+    <select id="getUmpiresAll" resultMap="umpiresVoRe">
+        SELECT umpires.*,
+               playground.playground_name
+        FROM g_umpires umpires
+                 left JOIN g_playground playground ON umpires.playground_id = playground.id
+    </select>
+
+    <!-- 查询单个裁判信息以及其隶属的单元和场地信息 -->
+    <!--    <select id="getUmpiresOne">-->
+    <!--        SELECT *-->
+    <!--        FROM g_umpires umpires-->
+    <!--        WHERE umpires.id = #{id}-->
+    <!--    </select>-->
+
+
+    <!--查询单个裁判-->
+    <select id="getUmpires" resultType="com.lingxi.model.po.GUmpires">
+        SELECT *
+        FROM g_umpires
+        WHERE id = #{id}
+    </select>
+
+    <resultMap id="umpiresVoRe" type="com.lingxi.model.vo.PlayGroundUmpiresVo">
+        <result property="playgroundName" column="playground_name"/>
+        <collection property="gUmpiresVoList" ofType="com.lingxi.model.po.GUmpires">
+            <result column="id" property="id"/>
+            <result column="playground_id" property="playgroundId"/>
+            <result column="unit_id" property="unitId"/>
+            <result column="project_id" property="projectId"/>
+            <result column="account" property="account"/>
+            <result column="name" property="name"/>
+            <result column="avatar" property="avatar"/>
+            <result column="type" property="type"/>
+            <result column="location" property="location"/>
+        </collection>
+    </resultMap>
+
+
+    <select id="getOneAllScore" resultType="com.lingxi.model.vo.GScoreUmpireVo">
+        select g_score_umpire.id,
+               gtp.name,
+               g_score_umpire.score,
+               p.p_name,
+               u.u_name
+        FROM g_score_umpire
+                 LEFT JOIN g_umpires gu ON g_score_umpire.umpire_id = gu.id
+                 left join g_team_project gtp on g_score_umpire.team_project_id = gtp.id
+                 left join g_projects p on p.id = gtp.p_id
+                 left join g_units u on u.id = p.unit_id
+        where gu.id = #{umpiresId}
+    </select>
+
+    <select id="getMarkUmpires" resultMap="MarkGUmpires">
+        SELECT *
+        FROM g_umpires
+        WHERE project_id = #{playgroundId}
+          AND unit_id = #{unitId}
+          AND project_id = #{projectId}
+    </select>
+    <select id="getMainUmpireId" resultType="java.lang.Integer">
+        select g_umpires.id
+        from g_umpires
+                 left join g_playground gp on g_umpires.playground_id = gp.id
+        where g_umpires.playground_id = #{playgroundId}
+          and g_umpires.type = 2;
+    </select>
+
+    <resultMap id="MarkGUmpires" type="com.lingxi.model.vo.MarkGumpiresVo">
+        <collection property="gUmpires" ofType="com.lingxi.model.po.GUmpires" resultMap="BaseResultMap"/>
+    </resultMap>
+</mapper>

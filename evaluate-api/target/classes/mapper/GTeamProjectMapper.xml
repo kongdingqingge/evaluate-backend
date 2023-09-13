@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingxi.mapper.GTeamProjectMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lingxi.model.po.GTeamProject">
+        <id column="id" property="id"/>
+        <result column="team_id" property="teamId"/>
+        <result column="p_id" property="pId"/>
+        <result column="name" property="name"/>
+        <result column="project_name" property="projectName"/>
+        <result column="time" property="time"/>
+        <result column="de_team_project_score" property="deTeamProjectScore"/>
+        <result column="add_team_project_score" property="addTeamProjectScore"/>
+        <result column="status" property="status"/>
+        <result column="massage" property="massage"/>
+        <result column="total_score" property="totalScore"/>
+        <result column="content" property="content"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, team_id, p_id, name, project_name, time, de_team_project_score, add_team_project_score, status, massage, total_score ,content
+    </sql>
+    <select id="getTeamProjects" resultMap="teamResult">
+        SELECT t.id        AS tId,
+               t.project_id,
+               t.name      AS teamName,
+               t.number,
+               t.members,
+               gtp.id      AS teamProjectId,
+               gtp.team_id as teamId,
+               gtp.p_id,
+               gtp.name    AS teamProjectName,
+               gtp.project_name,
+               gtp.time,
+               gtp.de_team_project_score,
+               gtp.add_team_project_score,
+               gtp.status,
+               gtp.massage,
+               gtp.total_score
+        FROM g_teams t
+                 LEFT JOIN g_team_project gtp ON t.id = gtp.team_id
+                 LEFT JOIN g_projects g ON g.id = gtp.p_id
+        ORDER BY tId ASC
+    </select>
+
+
+    <resultMap id="teamResult" type="com.lingxi.model.vo.TeamProjectVo">
+        <id column="tId" property="id"/>
+        <result column="project_id" property="projectId"/>
+        <result column="teamName" property="name"/>
+        <result column="number" property="number"/>
+        <result column="members" property="members"/>
+        <collection property="teamProjectList" ofType="com.lingxi.model.po.GTeamProject"
+                    resultMap="teamProjectResult"></collection>
+    </resultMap>
+
+    <resultMap id="teamProjectResult" type="com.lingxi.model.po.GTeamProject">
+        <id column="teamProjectId" property="id"/>
+        <result column="teamId" property="teamId"/>
+        <result column="p_id" property="pId"/>
+        <result column="teamProjectName" property="name"/>
+        <result column="project_name" property="projectName"/>
+        <result column="time" property="time"/>
+        <result column="de_team_project_score" property="deTeamProjectScore"/>
+        <result column="add_team_project_score" property="addTeamProjectScore"/>
+        <result column="status" property="status"/>
+        <result column="massage" property="massage"/>
+        <result column="total_score" property="totalScore"/>
+        <result column="content" property="content"/>
+    </resultMap>
+
+
+</mapper>

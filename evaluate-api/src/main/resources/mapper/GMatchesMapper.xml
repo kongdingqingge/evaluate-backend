@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingxi.mapper.GMatchesMapper">
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lingxi.model.po.GMatches">
+        <id column="id" property="id"/>
+        <result column="m_name" property="mName"/>
+        <result column="m_status" property="mStatus"/>
+        <result column="playground_count" property="playgroundCount"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, m_name, m_status, playground_count
+    </sql>
+    <delete id="deleteAll">
+        delete m, gp, gu, g
+        from g_matches m
+                 left join g_playground gp on m.id = gp.match_id
+                 left join g_units gu on gp.id = gu.playground_id
+                 left join g_projects g on gu.id = g.unit_id
+        where match_id = #{matchId}
+           or gp.id IS NULL
+           OR gu.id IS NULL
+           OR g.id IS NULL
+    </delete>
+
+
+    <delete id="dePlayGroundById">
+        delete gp,gu,g
+        from g_playground gp
+                 left join g_units gu on gp.id = gu.playground_id
+                 left join g_projects g on gu.id = g.unit_id
+        where gp.id = #{playGroundId}
+          and gu.playground_id = #{playGroundId}
+          and gu.id = g.unit_id
+    </delete>
+
+
+    <select id="getMatchAll" resultMap="MatchRe">
+        select m.id,
+               m.m_name AS mName,
+               m.m_status,
+               m.playground_count,
+               gp.id    AS pgId,
+               gp.playground_name,
+               gp.unit_count,
+               gp.match_id,
+               gu.id    AS uId,
+               gu.u_name,
+               gu.project_count,
+               gu.playground_id,
+               g.id     AS pId,
+               g.p_name,
+               g.unit_id,
+               g.p_status
+        from g_matches m
+                 left join g_playground gp on m.id = gp.match_id
+                 left join g_units gu on gp.id = gu.playground_id
+                 left join g_projects g on gu.id = g.unit_id
+    </select>
+
+    <select id="getUnitAndProjects" resultMap="unitRe">
+        select gu.id AS uId,
+               gu.u_name,
+               gu.project_count,
+               gu.playground_id,
+               p.id  AS pId,
+               p.p_name,
+               p.unit_id,
+               p.p_status
+        from g_units gu
+                 left join g_projects p on gu.id = p.unit_id
+                 left join g_playground gp on gu.playground_id = gp.id
+                 left join g_matches gm on gp.match_id = gm.id
+        where gp.id = #{playGroundId}
+    </select>
+
+    <!--    <resultMap id="matchVollist" type="com.lingxi.model.vo.MatchVoList">-->
+    <!--        <collection property="matchVosList" ofType="com.lingxi.model.vo.MatchVo" resultMap="MatchRe"></collection>-->
+    <!--    </resultMap>-->
+
+    <resultMap id="MatchRe" type="com.lingxi.model.vo.MatchVo">
+        <id column="id" property="id"/>
+        <result column="mName" property="mName"/>
+        <result column="m_status" property="mStatus"/>
+        <result column="playground_count" property="playgroundCount"/>
+        <collection property="playgroundList" ofType="com.lingxi.model.vo.GPlaygroundVo"
+                    resultMap="playgroundRe">
+        </collection>
+    </resultMap>
+
+    <resultMap id="playgroundRe" type="com.lingxi.model.vo.GPlaygroundVo">
+        <id column="pgId" property="id"/>
+        <result column="playground_name" property="playgroundName"/>
+        <result column="match_id" property="matchId"/>
+        <result column="unit_count" property="unitCount"/>
+        <collection property="unitVoList" resultMap="unitRe">
+        </collection>
+    </resultMap>
+
+    <resultMap id="unitRe" type="com.lingxi.model.vo.GunitVo">
+        <id column="uId" property="id"/>
+        <result column="u_name" property="uName"/>
+        <result column="playground_id" property="playgroundId"/>
+        <result column="project_count" property="projectCount"/>
+        <collection property="projectsList" resultMap="projectRe" ofType="com.lingxi.model.po.GProjects">
+        </collection>
+    </resultMap>
+
+    <resultMap id="projectRe" type="com.lingxi.model.po.GProjects">
+        <id column="pId" property="id"/>
+        <result column="p_name" property="pName"/>
+        <result column="unit_id" property="unitId"/>
+        <result column="p_status" property="pStatus"/>
+    </resultMap>
+
+    <delete id="clearAll">
+        DELETE
+        FROM g_matches,
+             g_playground,
+             g_projects,
+             g_score_umpire,
+             g_team_project,
+             g_teams,
+             g_umpires,
+             g_units;
+    </delete>
+
+    <delete id="clearTeam">
+        DELETE g_teams ,g_team_project
+        FROM g_teams
+                 left join g_team_project on g_teams.id = g_team_project.p_id
+    </delete>
+
+    <delete id="clearUmpires">
+        DELETE
+        FROM g_score_umpire,
+             g_umpires;
+    </delete>
+</mapper>

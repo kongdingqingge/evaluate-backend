@@ -1,0 +1,201 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "id": 1,
+      "mName": "",
+      "mStatus": 0,
+      "playgroundCount": 3,
+      "playgroundList": [
+        {
+          "id": 1,
+          "matchId": 1,
+          "playgroundName": "场地1",
+          "unitCount": 3,
+          "unitVoList": [
+            {
+              "id": 2,
+              "playgroundId": 1,
+              "projectCount": 4,
+              "projectsList": [
+                {
+                  "id": 7,
+                  "pName": "项目7",
+                  "pStatus": 0,
+                  "unitId": 2
+                },
+                {
+                  "id": 6,
+                  "pName": "项目6",
+                  "pStatus": 0,
+                  "unitId": 2
+                },
+                {
+                  "id": 5,
+                  "pName": "项目5",
+                  "pStatus": 0,
+                  "unitId": 2
+                },
+                {
+                  "id": 4,
+                  "pName": "项目4",
+                  "pStatus": 0,
+                  "unitId": 2
+                }
+              ],
+              "uName": "单元2"
+            },
+            {
+              "id": 1,
+              "playgroundId": 1,
+              "projectCount": 3,
+              "projectsList": [
+                {
+                  "id": 3,
+                  "pName": "项目3",
+                  "pStatus": 0,
+                  "unitId": 1
+                },
+                {
+                  "id": 2,
+                  "pName": "项目2",
+                  "pStatus": 0,
+                  "unitId": 1
+                },
+                {
+                  "id": 1,
+                  "pName": "项目1",
+                  "pStatus": 0,
+                  "unitId": 1
+                }
+              ],
+              "uName": "单元1"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "matchId": 1,
+          "playgroundName": "场地2",
+          "unitCount": 3,
+          "unitVoList": [
+            {
+              "id": 4,
+              "playgroundId": 2,
+              "projectCount": 5,
+              "projectsList": [
+                {
+                  "id": 14,
+                  "pName": "项目14",
+                  "pStatus": 0,
+                  "unitId": 4
+                },
+                {
+                  "id": 13,
+                  "pName": "项目13",
+                  "pStatus": 0,
+                  "unitId": 4
+                },
+                {
+                  "id": 12,
+                  "pName": "项目12",
+                  "pStatus": 0,
+                  "unitId": 4
+                },
+                {
+                  "id": 11,
+                  "pName": "项目11",
+                  "pStatus": 0,
+                  "unitId": 4
+                },
+                {
+                  "id": 10,
+                  "pName": "项目10",
+                  "pStatus": 0,
+                  "unitId": 4
+                }
+              ],
+              "uName": "单元4"
+            },
+            {
+              "id": 3,
+              "playgroundId": 2,
+              "projectCount": 2,
+              "projectsList": [
+                {
+                  "id": 9,
+                  "pName": "项目9",
+                  "pStatus": 0,
+                  "unitId": 3
+                },
+                {
+                  "id": 8,
+                  "pName": "项目8",
+                  "pStatus": 0,
+                  "unitId": 3
+                }
+              ],
+              "uName": "单元3"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "matchId": 1,
+          "playgroundName": "场地3",
+          "unitCount": 3,
+          "unitVoList": [
+            {
+              "id": 6,
+              "playgroundId": 3,
+              "projectCount": 3,
+              "projectsList": [
+                {
+                  "id": 19,
+                  "pName": "项目19",
+                  "pStatus": 0,
+                  "unitId": 6
+                },
+                {
+                  "id": 18,
+                  "pName": "项目18",
+                  "pStatus": 0,
+                  "unitId": 6
+                },
+                {
+                  "id": 17,
+                  "pName": "项目17",
+                  "pStatus": 0,
+                  "unitId": 6
+                }
+              ],
+              "uName": "单元6"
+            },
+            {
+              "id": 5,
+              "playgroundId": 3,
+              "projectCount": 2,
+              "projectsList": [
+                {
+                  "id": 16,
+                  "pName": "项目16",
+                  "pStatus": 0,
+                  "unitId": 5
+                },
+                {
+                  "id": 15,
+                  "pName": "项目15",
+                  "pStatus": 0,
+                  "unitId": 5
+                }
+              ],
+              "uName": "单元5"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "host": "",
+  "message": "操作成功"
+}

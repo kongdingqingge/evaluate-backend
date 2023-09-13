@@ -1,0 +1,38 @@
+server:
+  port: 8989
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+  profiles:
+    #    active: release
+    active: dev
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/evaluate?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
+      username: root
+      password: 123456
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  global-config:
+    #mybatis的标志
+    banner: false
+    db-config:
+      #去掉表名前缀，与实体类对应
+      table-prefix: tb_
+      #主键自动递增
+      id-type: auto
+
+qiniu:
+  accessKey: YhKDmPq1wIhOTaDkvtAw28NiyUIlsODPoK-kKdeP
+  secretKey: Rmf6yuBjbVoanh5nv68RmNTL5Iz9-tkw_iHSxBHQ
+  bucket: sportmember
+  #  hostName: https://pic.knowskf.com/
+  hostName: http://rzhkikf9h.hn-bkt.clouddn.com/

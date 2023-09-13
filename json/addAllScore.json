@@ -1,0 +1,23 @@
+[
+  {
+    "teamProjectId": 1,
+    "projectId": 1,
+    "time": "30分钟",
+    "status": 1,
+    "totalScore": 9.5
+  },
+  {
+    "teamProjectId": 2,
+    "projectId": 1,
+    "time": "30分钟",
+    "status": 1,
+    "totalScore": 9.5
+  },
+  {
+    "teamProjectId": 3,
+    "projectId": 1,
+    "time": "30分钟",
+    "status": 1,
+    "totalScore": 9.5
+  }
+]

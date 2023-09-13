@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingxi.mapper.GScoreUmpireMapper">
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lingxi.model.po.GScoreUmpire">
+        <id column="id" property="id"/>
+        <result column="umpire_id" property="umpireId"/>
+        <result column="team_project_id" property="teamProjectId"/>
+        <result column="project_id" property="projectId"/>
+        <result column="name" property="name"/>
+        <result column="score" property="score"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, umpire_id, team_project_id, project_id, name, score
+    </sql>
+
+    <insert id="addScoreUmpire">
+        INSERT INTO g_score_umpire(id, umpire_id, team_project_id, project_id, name, score)
+            VALUE (#{id}, #{umpireId}, #{teamProjectId}, #{projectId}, #{name}, #{score})
+    </insert>
+
+    <select id="getScoreUmpire" resultType="com.lingxi.model.po.GScoreUmpire">
+        SELECT *
+        FROM g_score_umpire
+        WHERE umpire_id = #{umpireId}
+          AND team_project_id = #{teamProjectId}
+          AND project_id = #{projectId}
+    </select>
+
+    <update id="updateScoreUmpire">
+        UPDATE g_score_umpire
+        SET score=#{score}
+        WHERE umpire_id = #{umpireId}
+          AND team_project_id = #{teamProjectId}
+          AND project_id = #{projectId}
+    </update>
+</mapper>

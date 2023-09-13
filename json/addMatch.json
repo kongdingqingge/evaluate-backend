@@ -1,0 +1,546 @@
+{
+  "name": "2023湖南省舞龙舞狮子锦标赛",
+  "unitCount": 2,
+  "startTime": "2023-07-05T10:00:00",
+  "overTime": "2023-07-06T18:00:00",
+  "unitList": [
+    {
+      "name": "一单元",
+      "groupCount": 2,
+      "groupList": [
+        {
+          "name": "舞龙项目组",
+          "projectCount": 15,
+          "GUmpiresDtoList": [
+            {
+              "account": "wlGUmpires1",
+              "name": "GUmpires 1",
+              "avatar": "avatar1.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires2",
+              "name": "GUmpires 2",
+              "avatar": "avatar2.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires3",
+              "name": "GUmpires 3",
+              "avatar": "avatar3.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires4",
+              "name": "GUmpires 4",
+              "avatar": "avatar4.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires5",
+              "name": "GUmpires 5",
+              "avatar": "avatar5.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires6",
+              "name": "GUmpires 6",
+              "avatar": "avatar6.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires7",
+              "name": "GUmpires 7",
+              "avatar": "avatar7.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires8",
+              "name": "GUmpires 8",
+              "avatar": "avatar8.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires9",
+              "name": "GUmpires 9",
+              "avatar": "avatar9.jpg",
+              "type": 1
+            }
+          ],
+          "projectList": [
+            {
+              "name": "甲组传统舞龙",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组组传统舞龙",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组传统舞龙",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "甲组障碍舞龙",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组障碍舞龙",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组障碍舞龙",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "甲组竞速舞龙",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组竞速舞龙",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组竞速舞龙",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "甲组规定套路舞龙",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组规定套路舞龙",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组规定套路舞龙",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "甲组自选套路舞龙",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组自选套路舞龙",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组自选套路舞龙",
+              "place": "开放大学体育馆"
+            }
+          ]
+        },
+        {
+          "name": "南狮项目组",
+          "projectCount": 2,
+          "GUmpiresDtoList": [
+            {
+              "account": "GUmpires1",
+              "name": "GUmpires 1",
+              "avatar": "avatar1.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires2",
+              "name": "GUmpires 2",
+              "avatar": "avatar2.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires3",
+              "name": "GUmpires 3",
+              "avatar": "avatar3.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires4",
+              "name": "GUmpires 4",
+              "avatar": "avatar4.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires5",
+              "name": "GUmpires 5",
+              "avatar": "avatar5.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires6",
+              "name": "GUmpires 6",
+              "avatar": "avatar6.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires7",
+              "name": "GUmpires 7",
+              "avatar": "avatar7.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires8",
+              "name": "GUmpires 8",
+              "avatar": "avatar8.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires9",
+              "name": "GUmpires 9",
+              "avatar": "avatar9.jpg",
+              "type": 1
+            }
+          ],
+          "projectList": [
+            {
+              "name": "甲组传统南狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组传统南狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组传统南狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "甲组障碍南狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组障碍南狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组障碍南狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "甲组竞速南狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组竞速南狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组竞速南狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "甲组群狮自选套路",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组群狮自选套路",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组群狮自选套路",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "甲组群狮规定套路",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组群狮规定套路",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组群狮规定套路",
+              "place": "开放大学体育馆"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "二单元",
+      "groupCount": 2,
+      "groupList": [
+        {
+          "name": "北狮项目组",
+          "projectCount": 3,
+          "GUmpiresDtoList": [
+            {
+              "account": "GUmpires1",
+              "name": "GUmpires 1",
+              "avatar": "avatar1.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires2",
+              "name": "GUmpires 2",
+              "avatar": "avatar2.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires3",
+              "name": "GUmpires 3",
+              "avatar": "avatar3.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires4",
+              "name": "GUmpires 4",
+              "avatar": "avatar4.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires5",
+              "name": "GUmpires 5",
+              "avatar": "avatar5.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires6",
+              "name": "GUmpires 6",
+              "avatar": "avatar6.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires7",
+              "name": "GUmpires 7",
+              "avatar": "avatar7.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires8",
+              "name": "GUmpires 8",
+              "avatar": "avatar8.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires9",
+              "name": "GUmpires 9",
+              "avatar": "avatar9.jpg",
+              "type": 1
+            }
+          ],
+          "projectList": [
+            {
+              "name": "甲组传统北狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组传统北狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组传统北狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "甲组障碍北狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组障碍北狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组障碍北狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "甲组竞速北狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组竞速北狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组竞速北狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "甲组北狮规定套路",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组北狮规定套路",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组北狮规定套路",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "甲组北狮自选套路",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组北狮自选套路",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组北狮自选套路",
+              "place": "开放大学体育馆"
+            }
+          ]
+        },
+        {
+          "name": "彩带龙项目组",
+          "projectCount": 2,
+          "GUmpiresDtoList": [
+            {
+              "account": "GUmpires1",
+              "name": "GUmpires 1",
+              "avatar": "avatar1.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires2",
+              "name": "GUmpires 2",
+              "avatar": "avatar2.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires3",
+              "name": "GUmpires 3",
+              "avatar": "avatar3.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires4",
+              "name": "GUmpires 4",
+              "avatar": "avatar4.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires5",
+              "name": "GUmpires 5",
+              "avatar": "avatar5.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires6",
+              "name": "GUmpires 6",
+              "avatar": "avatar6.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires7",
+              "name": "GUmpires 7",
+              "avatar": "avatar7.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires8",
+              "name": "GUmpires 8",
+              "avatar": "avatar8.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires9",
+              "name": "GUmpires 9",
+              "avatar": "avatar9.jpg",
+              "type": 1
+            }
+          ],
+          "projectList": [
+            {
+              "name": "甲组彩带龙推广套路",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组彩带龙推广套路",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组彩带龙推广套路",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "甲组彩带龙自选套路",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组彩带龙自选套路",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组彩带龙自选套路",
+              "place": "开放大学体育馆"
+            }
+          ]
+        },
+        {
+          "name": "创意龙狮项目组",
+          "projectCount": 2,
+          "GUmpiresDtoList": [
+            {
+              "account": "GUmpires1",
+              "name": "GUmpires 1",
+              "avatar": "avatar1.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires2",
+              "name": "GUmpires 2",
+              "avatar": "avatar2.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires3",
+              "name": "GUmpires 3",
+              "avatar": "avatar3.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires4",
+              "name": "GUmpires 4",
+              "avatar": "avatar4.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires5",
+              "name": "GUmpires 5",
+              "avatar": "avatar5.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires6",
+              "name": "GUmpires 6",
+              "avatar": "avatar6.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires7",
+              "name": "GUmpires 7",
+              "avatar": "avatar7.jpg",
+              "type": 1
+            },
+            {
+              "account": "GUmpires8",
+              "name": "GUmpires 8",
+              "avatar": "avatar8.jpg",
+              "type": 2
+            },
+            {
+              "account": "GUmpires9",
+              "name": "GUmpires 9",
+              "avatar": "avatar9.jpg",
+              "type": 1
+            }
+          ],
+          "projectList": [
+            {
+              "name": "甲组创意龙狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "乙组创意龙狮",
+              "place": "开放大学体育馆"
+            },
+            {
+              "name": "丙组创意龙狮",
+              "place": "开放大学体育馆"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
